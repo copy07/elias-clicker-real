@@ -1,0 +1,189 @@
+[gd_scene load_steps=12 format=3 uid="uid://cqu7ci1v3wf40"]
+
+[ext_resource type="Script" path="res://Scripts/elias_button.gd" id="2_40vgu"]
+[ext_resource type="Texture2D" uid="uid://bppt854qiripx" path="res://Sprites/Elias_2.png" id="2_o7itl"]
+[ext_resource type="Texture2D" uid="uid://bmq3qd0gseu35" path="res://Sprites/Elias_1.png" id="2_pqa0a"]
+[ext_resource type="Texture2D" uid="uid://7n2lko2wvfya" path="res://Sprites/Mario_1.png" id="4_23law"]
+[ext_resource type="Texture2D" uid="uid://ddhrrlfdgue7l" path="res://Sprites/Mario_2.png" id="5_s5621"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdaoo"]
+atlas = ExtResource("2_o7itl")
+region = Rect2(0, 0, 689, 1078)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62p26"]
+atlas = ExtResource("2_pqa0a")
+region = Rect2(0, 0, 624, 831)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a7ypu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdaoo")
+}],
+"loop": true,
+"name": &"Moged",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62p26")
+}],
+"loop": true,
+"name": &"Sigma",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4yv3t"]
+atlas = ExtResource("4_23law")
+region = Rect2(0, 0, 559, 928)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40ycd"]
+atlas = ExtResource("5_s5621")
+region = Rect2(0, 0, 592, 875)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t76uo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4yv3t")
+}],
+"loop": true,
+"name": &"Chill",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40ycd")
+}],
+"loop": true,
+"name": &"Geeked",
+"speed": 5.0
+}]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("2_40vgu")
+
+[node name="GUI" type="Label" parent="."]
+offset_right = 1150.0
+offset_bottom = 650.0
+
+[node name="MarginContainer" type="MarginContainer" parent="GUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI/MarginContainer"]
+layout_mode = 2
+
+[node name="Score" type="Label" parent="GUI/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "Eliases: 0"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="GUI/MarginContainer/VBoxContainer/Score"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 65.0
+offset_top = 88.0
+offset_right = 72.0
+offset_bottom = 132.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 6)
+theme_override_constants/margin_top = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI/MarginContainer/VBoxContainer/Score/MarginContainer"]
+layout_mode = 2
+
+[node name="EliasButton" type="Button" parent="GUI/MarginContainer/VBoxContainer/Score/MarginContainer/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_stretch_ratio = 0.0
+button_mask = 3
+text = "Elias
+"
+
+[node name="BElias" type="AnimatedSprite2D" parent="GUI/MarginContainer/VBoxContainer/Score/MarginContainer/VBoxContainer/EliasButton"]
+position = Vector2(22.05, 16.3333)
+scale = Vector2(0.100481, 0.0541516)
+sprite_frames = SubResource("SpriteFrames_a7ypu")
+animation = &"Moged"
+autoplay = "Sigma"
+
+[node name="MarginContainer2" type="MarginContainer" parent="GUI/MarginContainer/VBoxContainer/Score"]
+layout_mode = 0
+offset_left = 941.0
+offset_top = 38.0
+offset_right = 1031.0
+offset_bottom = 96.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI/MarginContainer/VBoxContainer/Score/MarginContainer2"]
+layout_mode = 2
+
+[node name="MoreElias" type="Button" parent="GUI/MarginContainer/VBoxContainer/Score/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Buy a Elias"
+
+[node name="MECost" type="Label" parent="GUI/MarginContainer/VBoxContainer/Score/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Cost: 10"
+
+[node name="MEOwned" type="Label" parent="GUI/MarginContainer/VBoxContainer/Score/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Owned: 0"
+
+[node name="MarginContainer3" type="MarginContainer" parent="GUI/MarginContainer/VBoxContainer/Score"]
+layout_mode = 0
+offset_left = 941.0
+offset_top = 200.0
+offset_right = 981.0
+offset_bottom = 240.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI/MarginContainer/VBoxContainer/Score/MarginContainer3"]
+layout_mode = 2
+
+[node name="MarioButton" type="Button" parent="GUI/MarginContainer/VBoxContainer/Score/MarginContainer3/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+text = "Buy a Mario"
+
+[node name="Mario" type="AnimatedSprite2D" parent="GUI/MarginContainer/VBoxContainer/Score/MarginContainer3/VBoxContainer/MarioButton"]
+position = Vector2(45, 14)
+scale = Vector2(0.31127, 0.0560345)
+sprite_frames = SubResource("SpriteFrames_t76uo")
+animation = &"Chill"
+
+[node name="MarioCost" type="Label" parent="GUI/MarginContainer/VBoxContainer/Score/MarginContainer3/VBoxContainer"]
+layout_mode = 2
+text = "Cost: 15"
+
+[node name="MarOwned" type="Label" parent="GUI/MarginContainer/VBoxContainer/Score/MarginContainer3/VBoxContainer"]
+layout_mode = 2
+text = "Owned: 0"
+
+[node name="MarginContainer4" type="MarginContainer" parent="GUI/MarginContainer/VBoxContainer/Score"]
+layout_mode = 0
+offset_left = 948.0
+offset_top = 348.0
+offset_right = 988.0
+offset_bottom = 388.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI/MarginContainer/VBoxContainer/Score/MarginContainer4"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="GUI/MarginContainer/VBoxContainer/Score/MarginContainer4/VBoxContainer"]
+layout_mode = 2
+text = "super Elias"
+
+[node name="Background" type="Sprite2D" parent="."]
