@@ -1,0 +1,12 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1734709145
+export_presets.cfg::TextFile::-1::1734377749::0::1::::<><>::
+icon.svg::CompressedTexture2D::982659538521548049::1733511859::1733511879::1::::<><>::
+main.tscn::PackedScene::5939097397376401175::1734462188::0::1::::<><>::res://Scripts/elias_button.gd<>uid://bppt854qiripx::::res://Sprites/Elias_2.png<>uid://bmq3qd0gseu35::::res://Sprites/Elias_1.png<>uid://7n2lko2wvfya::::res://Sprites/Mario_1.png<>uid://ddhrrlfdgue7l::::res://Sprites/Mario_2.png
+::res://Scripts/::1734378181
+elias_button.gd::GDScript::-1::1734378181::0::1::::<>Node2D<>::
+::res://Sprites/::1734115150
+Elias_1.png::CompressedTexture2D::3263445696401394150::1734030325::1734030466::1::::<><>::
+Elias_2.png::CompressedTexture2D::3471433179874075645::1734030345::1734030467::1::::<><>::
+Mario_1.png::CompressedTexture2D::2274539457875212844::1734115007::1734115150::1::::<><>::
+Mario_2.png::CompressedTexture2D::7385342359271221627::1734115023::1734115150::1::::<><>::
